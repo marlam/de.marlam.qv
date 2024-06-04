@@ -187,6 +187,8 @@ modules:
       - type: archive
         url: https://marlam.de/tgd/releases/tgd-4.3.tar.gz
         sha256: 76abcf3ef7f6d843182faeabef317091077c9d3afd5a878e425ce4e4a4ea25c9
+      - type: patch
+        path: tgd-ffmpeg-compat.patch
   # finally, qv.
   - name: qv
     buildsystem: cmake-ninja
