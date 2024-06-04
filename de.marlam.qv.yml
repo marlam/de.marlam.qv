@@ -32,6 +32,9 @@ modules:
   # Exiv2: used by libtgd to read png and jpeg metadata
   - name: exiv2
     buildsystem: cmake-ninja
+    config-opts:
+      - -DEXIV2_BUILD_EXIV2_COMMAND=OFF
+      - -DEXIV2_ENABLE_INIH=OFF
     sources:
       - type: archive
         url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.2.tar.gz
