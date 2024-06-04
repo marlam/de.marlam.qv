@@ -130,8 +130,9 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.3/src/hdf5-1.12.3.tar.bz2
-        sha256: 31cdc13b1097b34f8d5bee67a8ea2ab082b7c128d817e69e04d8f59ae8aea295
+        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.4/src/hdf5-1.14.4-3.tar.gz
+        sha256: 019ac451d9e1cf89c0482ba2a06f07a46166caf23f60fea5ef3c37724a318e03
+        strip-components: 2
     cleanup:
       - '/bin'
   # matio: used by libtgd to read Matlab .mat files
