@@ -1,6 +1,6 @@
 app-id: de.marlam.qv
 runtime: org.kde.Platform
-runtime-version: '6.4'
+runtime-version: '6.7'
 sdk: org.kde.Sdk
 command: qv
 finish-args:
@@ -34,8 +34,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/Exiv2/exiv2/releases/download/v0.27.5/exiv2-0.27.5-Source.tar.gz
-        sha256: 35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2
+        url: https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.2.tar.gz
+        sha256: 543bead934135f20f438e0b6d8858c55c5fcb7ff80f5d1d55489965f1aad58b9
     cleanup:
       - '/bin'
   # Dcmtk: used by libtgd to read DICOM medical image data
@@ -46,8 +46,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: https://dicom.offis.de/download/dcmtk/dcmtk367/dcmtk-3.6.7.tar.gz
-        sha256: 7c58298e3e8d60232ee6fc8408cfadd14463cc11a3c4ca4c59af5988c7e9710a
+        url: https://dicom.offis.de/download/dcmtk/dcmtk368/dcmtk-3.6.8.tar.gz
+        sha256: 232076655503138debf2f624109f1799e539354f186ce4e04b27cf82a9d8720f
     cleanup:
       - '/bin'
   # Imath: prerequisite for OpenEXR
@@ -55,15 +55,15 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.6.tar.gz
-        sha256: ea5592230f5ab917bea3ceab266cf38eb4aa4a523078d46eac0f5a89c52304db
+        url: https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.11.tar.gz
+        sha256: 9057849585e49b8b85abe7cc1e76e22963b01bfdc3b6d83eac90c499cd760063
   # OpenEXR: used by libtgd to read EXR image data
   - name: OpenEXR
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.1.5.tar.gz
-        sha256: 93925805c1fc4f8162b35f0ae109c4a75344e6decae5a240afdfce25f8a433ec
+        url: https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.4.tar.gz
+        sha256: 81e6518f2c4656fdeaf18a018f135e96a96e7f66dbe1c1f05860dd94772176cc
     cleanup:
       - '/bin'
   # cfitsio: used by libtgd to read FITS astronomy data
@@ -72,8 +72,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.2.0.tar.gz
-        sha256: eba53d1b3f6e345632bb09a7b752ec7ced3d63ec5153a848380f3880c5d61889
+        url: https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio-4.4.0.tar.gz
+        sha256: 95900cf95ae760839e7cb9678a7b2fad0858d6ac12234f934bd1cb6bfc246ba9
   # Boost: recommended (though not strictly required) by poppler for performance reasons.
   # Note that poppler uses only the container headers, but its CMakeLists.txt wants to
   # detect all of Boost, so we build it all here.
@@ -84,8 +84,8 @@ modules:
       - ./b2 install
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2
-        sha256: 1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2
+        sha256: 7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617
     cleanup:
       - '/lib/libboost*'
   # poppler: used by libtgd to read PDFs
@@ -101,8 +101,8 @@ modules:
       - -DENABLE_LIBCURL=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-22.11.0.tar.xz
-        sha256: 093ba9844ed774285517361c15e21a31ba4df278a499263d4403cca74f2da828
+        url: https://poppler.freedesktop.org/poppler-24.06.0.tar.xz
+        sha256: 0cdabd495cada11f6ee9e75c793f80daf46367b66c25a63ee8c26d0f9ec40c76
     cleanup:
       - '/bin'
   # pfstools: libpfs is used by libtgd to read PFS image data
@@ -120,8 +120,8 @@ modules:
     builddir: true
     sources:
       - type: archive
-        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.1/src/hdf5-1.12.1.tar.bz2
-        sha256: aaf9f532b3eda83d3d3adc9f8b40a9b763152218fa45349c3bc77502ca1f8f1c
+        url: https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.4/src/hdf5-1.14.4-3.tar.gz
+        sha256: 297069ae93198f832bb5e2eb2045f6a8e3f8b09452201fa0a5ef8746f112b30d
     cleanup:
       - '/bin'
   # matio: used by libtgd to read Matlab .mat files
@@ -129,8 +129,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/tbeu/matio/releases/download/v1.5.23/matio-1.5.23.tar.gz
-        sha256: 9f91eae661df46ea53c311a1b2dcff72051095b023c612d7cbfc09406c9f4d6e
+        url: https://github.com/tbeu/matio/releases/download/v1.5.27/matio-1.5.27.tar.gz
+        sha256: 0a6aa00b18c4512b63a8d27906b079c8c6ed41d4b2844f7a4ae598e18d22d3b3
     cleanup:
       - '/bin'
   # ImageMagick: used by libtgd to read a few exotic file formats that don't have their own importer
@@ -138,8 +138,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.0-52.tar.gz
-        sha256: bacd6d63f16482f269bf5cfe76d34b9a2b01ec737e9cb41fd2612d37f34698fc
+        url: https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.1-33.tar.gz
+        sha256: 3fe527ce04ee5485dc6f7726eccd05c962add5c5d91843c5abf6c608e4f55330
     cleanup:
       - '/bin'
   # PROJ: prerequisite for GDAL
@@ -149,8 +149,8 @@ modules:
       - -DBUILD_TESTING=OFF
     sources:
       - type: archive
-        url: https://download.osgeo.org/proj/proj-9.1.0.tar.gz
-        sha256: 81b2239b94cad0886222cde4f53cb49d34905aad2a1317244a0c30a553db2315
+        url: https://download.osgeo.org/proj/proj-9.4.1.tar.gz
+        sha256: ffe20170ee2b952207adf8a195e2141eab12cda181e49fdeb54425d98c7171d7
     cleanup:
       - '/bin'
   # GDAL: used by libtgd to read all sorts of Remote Sensing image data
@@ -161,8 +161,8 @@ modules:
       - -DGDAL_USE_POPPLER=OFF
     sources:
       - type: archive
-        url: https://github.com/OSGeo/gdal/releases/download/v3.6.0/gdal-3.6.0.tar.gz
-        sha256: 0d6a79eec0c6afb97c7172e429ec05c9d15d3917987ad686a914b292c83531db
+        url: https://github.com/OSGeo/gdal/releases/download/v3.9.0/gdal-3.9.0.tar.gz
+        sha256: 3b29b573b60d156cf160805290474b625c4197ca36a79fd14f83ec8f77f29ba0
     cleanup:
       - '/bin'
   # tgd: used by qv to read images and data files in almost any format, and manage the data in memory
@@ -174,14 +174,12 @@ modules:
       - -DTGD_BUILD_DOCUMENTATION=OFF
     sources:
       - type: archive
-        url: https://marlam.de/tgd/releases/tgd-4.2.tar.gz
-        sha256: 147940dcc75aaa795431751b74826a826b65ff8c1e6d173e6d9a0c53c726d6e3
+        url: https://marlam.de/tgd/releases/tgd-4.3.tar.gz
+        sha256: 76abcf3ef7f6d843182faeabef317091077c9d3afd5a878e425ce4e4a4ea25c9
   # finally, qv.
   - name: qv
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://marlam.de/qv/releases/qv-5.1.tar.gz
-        sha256: 0cc57860d4c64d680cb85daebdb72362855f95cf43fbe466ad5e77e6338ffd70
-      - type: patch
-        path: update-metainfo.patch
+        url: https://marlam.de/qv/releases/qv-5.2.tar.gz
+        sha256: 7f9db0754f8a691b8547df78ccb136664642c3f8d0e9b000784703b7503e4c33
