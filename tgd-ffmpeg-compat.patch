@@ -1,0 +1,29 @@
+commit 1b5751d287e6899e5261c39e2a6182938e78c2cc
+Author: Martin Lambers <marlam@marlam.de>
+Date:   Tue Jun 4 21:41:08 2024 +0200
+
+    Revert "Avoid ffmpeg deprecated API"
+    
+    This reverts commit 352da3423756d1bfb6983332319a4ef174005273.
+
+diff --git a/io/io-ffmpeg.cpp b/io/io-ffmpeg.cpp
+index 1762f51..7503b9d 100644
+--- a/io/io-ffmpeg.cpp
++++ b/io/io-ffmpeg.cpp
+@@ -2,7 +2,6 @@
+  * Copyright (C) 2019, 2020, 2021, 2022
+  * Computer Graphics Group, University of Siegen
+  * Written by Martin Lambers <martin.lambers@uni-siegen.de>
+- * Copyright (C) 2024 Martin Lambers <marlam@marlam.de>
+  *
+  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  * of this software and associated documentation files (the "Software"), to deal
+@@ -481,7 +480,7 @@ ArrayContainer FormatImportExportFFMPEG::readArray(Error* error, int arrayIndex)
+                 if (_frameDTSs.size() == 1 || dts < _minDTS) {
+                     _minDTS = dts;
+                 }
+-                if (_ffmpeg->videoFrame->flags & AV_FRAME_FLAG_KEY) {
++                if (_ffmpeg->videoFrame->key_frame) {
+                     _keyFrames.push_back(_frameDTSs.size() - 1);
+                 }
+             }
