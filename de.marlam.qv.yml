@@ -122,6 +122,8 @@ modules:
   # pfstools: libpfs is used by libtgd to read PFS image data
   - name: pfstools
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://altushost-swe.dl.sourceforge.net/project/pfstools/pfstools/2.2.0/pfstools-2.2.0.tgz
