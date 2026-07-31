@@ -59,7 +59,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/ebiggers/libdeflate/releases/download/v1.25/libdeflate-1.25.tar.gz
-        sha256: sha256:fed5cd22f00f30cc4c2e5329f94e2b8a901df9fa45ee255cb70e2b0b42344477
+        sha256: fed5cd22f00f30cc4c2e5329f94e2b8a901df9fa45ee255cb70e2b0b42344477
     cleanup:
       - '/bin'
   # Imath: prerequisite for OpenEXR
@@ -75,7 +75,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/AcademySoftwareFoundation/openexr/releases/download/v3.3.12/openexr-3.3.12.tar.gz
-        sha256: sha256:1b1526b0e6f83db906b0793b59abc2c25f67bbe16755f5a936bdaf8780438f8d
+        sha256: 1b1526b0e6f83db906b0793b59abc2c25f67bbe16755f5a936bdaf8780438f8d
     cleanup:
       - '/bin'
   # cfitsio: used by libtgd to read FITS astronomy data
